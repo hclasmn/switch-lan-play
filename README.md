@@ -2,6 +2,16 @@
 [![Build status](https://github.com/spacemeowx2/switch-lan-play/workflows/Build/badge.svg)](https://github.com/spacemeowx2/switch-lan-play/actions?query=workflow%3ABuild)
 [![Chat on discord](https://img.shields.io/badge/chat-on%20discord-7289da.svg)](https://discord.gg/zEMCu5n)
 
+```
+
+docker-client
+此Dockerfile旨为构建客户端的镜像文件,可以跑在NAS(比如树莓派),这样就可以不用打开PC则可以愉快动森联机了
+
+执行命令
+docker run -d --net host hclasmn/switch-lan-play-client:latest --relay-server-addr 域名:11451
+
+```
+
 Make you and your friends play games like in a LAN.
 
 ```
