@@ -12,4 +12,5 @@ RUN echo "cd /switch-lan-play/server && npm start">>/start.sh
 RUN chmod 777 /start.sh
 EXPOSE 11451
 
+
 ENTRYPOINT ["/bin/bash","/start.sh"]
