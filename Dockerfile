@@ -7,8 +7,9 @@ RUN apk add --no-cache git bash && \
     cd server && \
     npm install && \
     npm run build
-RUN echo "cd /switch-lan-play/server && npm start;'">>/start.sh
+RUN touch start.sh
+RUN echo "cd /switch-lan-play/server && npm start">>/start.sh
 RUN chmod 777 /start.sh
-EXPOSE 11541
+EXPOSE 11451
 
 ENTRYPOINT ["/bin/bash","/start.sh"]
