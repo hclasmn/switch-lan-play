@@ -1,11 +1,11 @@
-FROM buildpack-deps:bionic
-
+FROM ubuntu:18.04
 ENV LANVERSION=0.2.1
 
-#RUN sed -i 's/archive.ubuntu.com/mirrors.ustc.edu.cn/g' /etc/apt/sources.list && sed -i 's/security.ubuntu.com/mirrors.ustc.edu.cn/g' /etc/apt/sources.list
+RUN sed -i 's/archive.ubuntu.com/mirrors.ustc.edu.cn/g' /etc/apt/sources.list && sed -i 's/security.ubuntu.com/mirrors.ustc.edu.cn/g' /etc/apt/sources.list
 
 RUN apt update
 RUN apt install -y libpcap0.8-dev
 RUN wget -O /usr/bin/lan-play-linux  https://github.com/hclasmn/switch-lan-play/blob/master/switch-play-lan-armv7 && chmod +x /usr/bin/lan-play-armv7
+RUN chmod +x /usr/bin/lan-play-armv7
 
 ENTRYPOINT ["lan-play-armv7"]
