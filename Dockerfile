@@ -7,6 +7,6 @@ RUN apk add --no-cache git && \
     cd server && \
     npm install && \
     npm run build && \
-    cp ./dist /app
+COPY /switch-lan-play/server /app
 
 CMD ["npm", "start"]
